@@ -11,6 +11,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -23,6 +24,7 @@ import com.github.gmm.designsamaple.activity.LoginActivity;
 import com.github.gmm.designsamaple.activity.MainActivity;
 import com.github.gmm.designsamaple.base.BaseFragment;
 import com.github.gmm.designsamaple.utils.KeyConstants;
+import com.wuxiaolong.androidutils.library.LogUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,8 +55,28 @@ public class FirstFragment extends BaseFragment {
         ((MainActivity) Objects.requireNonNull(getActivity())).initDrawer(mToolbar);
         inflateMenu();
         initTabLayout(view);
+        initSearchView();
         mFab.setOnClickListener((v)->{
             startActivity(new Intent(getActivity(), LoginActivity.class));
+        });
+    }
+
+    private void initSearchView() {
+        final SearchView searchView = (SearchView) mToolbar.getMenu().findItem(R.id.menu_search).getActionView();
+        searchView.setQueryHint("搜索");
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                showToast("query=" + query);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                LogUtil.d("onQueryTextChange=" + newText);
+                showToast("newText=" + newText);
+                return false;
+            }
         });
     }
 

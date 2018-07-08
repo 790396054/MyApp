@@ -34,6 +34,18 @@ public class BaseActivity extends AppCompatActivity {
         return toolbar;
     }
 
+    public Toolbar initToolBar(String title) {
+        Toolbar toolbar = findViewById(R.id.toolBar);
+        toolbar.setTitle(title);
+        setSupportActionBar(toolbar);
+        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+
+        }
+        return toolbar;
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {

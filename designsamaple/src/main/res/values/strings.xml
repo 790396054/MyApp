@@ -135,4 +135,5 @@
     <string name="shortcut_short_label1">shortcut_short_label1</string>
     <string name="shortcut_short_label2">shortcut_short_label2</string>
     <string name="shortcut_long_label2">shortcut_long_label2</string>
+    <string name="login">登录</string>
 </resources>
