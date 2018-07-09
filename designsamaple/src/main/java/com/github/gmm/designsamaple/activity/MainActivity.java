@@ -126,13 +126,13 @@ public class MainActivity extends BaseActivity {
                 case R.id.navigation_item2:
                     currentIndex = 2;
                     item.setChecked(true);
-                    currentFragment = new ThirdFragment();
+                    currentFragment = new SecondFragment();
                     switchFragment(currentFragment);
                     return true;
                 case R.id.navigation_item3:
                     currentIndex = 1;
                     item.setChecked(true);
-                    currentFragment = new SecondFragment();
+                    currentFragment = new ThirdFragment();
                     switchFragment(currentFragment);
                     return true;
                 case R.id.navigation_item_night:

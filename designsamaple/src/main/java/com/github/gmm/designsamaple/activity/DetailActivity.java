@@ -53,7 +53,8 @@ public class DetailActivity extends BaseActivity {
         // 设置过度动画
         ViewCompat.setTransitionName(imageView, AppConstants.TRANSITION_PIC);
         if (position % 2 == 0) {
-            imageView.setBackgroundResource(R.mipmap.show_img1);
+            imageView.setImageResource(R.mipmap.show_img1);
+//            imageView.setBackgroundResource(R.mipmap.show_img1);
         } else {
             imageView.setBackgroundResource(R.mipmap.show_img2);
         }
